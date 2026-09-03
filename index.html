@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be™ Brooklyn Equine at Prospect Park Stable</title>
+  <meta name="description" content="Brooklyn's only centrally located stable. Horse care & riding programs for all ages, pony rides, trail rides, and lessons in Prospect Park.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231b3a2b'/%3E%3Ctext x='50' y='50' font-size='60' text-anchor='middle' dominant-baseline='central'%3E%F0%9F%90%B4%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#1b3a2b">
+  <!-- Social / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Be™ Brooklyn Equine at Prospect Park Stable">
+  <meta property="og:description" content="Brooklyn's only centrally located stable. Horse care & riding programs for all ages — pony rides, trail rides, and lessons in Prospect Park.">
+  <meta property="og:image" content="hero-ride.jpg">
+  <meta property="og:url" content="https://brooklyn-equine.example/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Be™ Brooklyn Equine at Prospect Park Stable">
+  <meta name="twitter:description" content="Horse care & riding programs for all ages in the heart of Brooklyn.">
+  <meta name="twitter:image" content="hero-ride.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #1b3a2b;
+      --forest-light: #2d5a45;
+      --saddle: #5c3a21;
+      --cream: #f7f5f0;
+      --gold: #c9a227;
+      --charcoal: #2a2a2a;
+      --stone: #6b6b6b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--charcoal);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.6rem; border-radius: 999px;
+      font-weight: 600; font-size: 0.95rem; transition: all 0.2s ease;
+      border: 2px solid transparent; cursor: pointer;
+    }
+    .btn-primary { background: var(--gold); color: var(--forest); }
+    .btn-primary:hover { background: #b08d1f; transform: translateY(-2px); }
+    .btn-outline { border-color: var(--cream); color: var(--cream); }
+    .btn-outline:hover { background: var(--cream); color: var(--forest); }
+    .btn-dark { background: var(--forest); color: var(--cream); }
+    .btn-dark:hover { background: var(--forest-light); }
+
+    /* Header */
+    header {
+      position: fixed; inset: 0 0 auto 0; z-index: 100;
+      background: rgba(27, 58, 43, 0.95); backdrop-filter: blur(8px);
+      color: var(--cream); border-bottom: 1px solid rgba(247, 245, 240, 0.1);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; font-size: 0.92rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--gold); }
+    .mobile-menu { display: none; background: none; border: none; color: var(--cream); font-size: 1.5rem; cursor: pointer; }
+
+    /* Hero */
+    .hero {
+      position: relative; min-height: 92vh; display: flex; align-items: center;
+      padding-top: 72px; color: var(--cream); overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(27,58,43,0.88) 0%, rgba(27,58,43,0.55) 55%, rgba(27,58,43,0.25) 100%), url('hero-ride.jpg') center/cover no-repeat;
+      z-index: -1;
+    }
+    .hero-content { max-width: 640px; padding: 4rem 0; }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); margin-bottom: 1.25rem; }
+    .hero p { font-size: 1.15rem; color: rgba(247, 245, 240, 0.92); margin-bottom: 2rem; max-width: 520px; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(247, 245, 240, 0.12); padding: 0.45rem 0.9rem;
+      border-radius: 999px; font-size: 0.85rem; margin-bottom: 1.5rem;
+      border: 1px solid rgba(247, 245, 240, 0.15);
+    }
+    .stars { color: var(--gold); letter-spacing: 0.05em; }
+
+    /* Sections */
+    section { padding: 5rem 0; }
+    section[id] { scroll-margin-top: 84px; }
+    .section-title { font-size: clamp(2rem, 4vw, 2.6rem); color: var(--forest); margin-bottom: 0.75rem; }
+    .section-subtitle { color: var(--stone); font-size: 1.05rem; max-width: 640px; margin-bottom: 2.5rem; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about-text p { margin-bottom: 1rem; color: var(--stone); }
+    .about-text strong { color: var(--forest); }
+    .about-image { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(27,58,43,0.15); }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; }
+    .caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(27, 58, 43, 0.85); color: var(--cream);
+      padding: 1rem 1.25rem; font-size: 0.85rem;
+    }
+
+    /* Stats */
+    .stats { background: var(--forest); color: var(--cream); padding: 3rem 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; }
+    .stat-number { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--gold); }
+    .stat-label { font-size: 0.9rem; opacity: 0.85; }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-card {
+      background: white; border-radius: 16px; padding: 2rem;
+      box-shadow: 0 8px 30px rgba(27,58,43,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(27,58,43,0.1); }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--cream); color: var(--forest);
+      display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 1rem;
+    }
+    .service-card h3 { font-size: 1.25rem; color: var(--forest); margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.95rem; color: var(--stone); }
+
+    /* Programs highlight */
+    .programs { background: white; }
+    .program-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .program-item {
+      display: flex; gap: 1rem; padding: 1.25rem;
+      border-radius: 12px; background: var(--cream); border: 1px solid rgba(27,58,43,0.06);
+    }
+    .program-item h3 { font-size: 1.1rem; color: var(--forest); margin-bottom: 0.25rem; }
+    .program-item p { font-size: 0.92rem; color: var(--stone); }
+
+    /* Reviews */
+    .reviews { background: var(--cream); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .review-card {
+      background: white; padding: 1.75rem; border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(27,58,43,0.05);
+    }
+    .review-stars { color: var(--gold); margin-bottom: 0.75rem; }
+    .review-text { font-size: 0.95rem; color: var(--charcoal); margin-bottom: 1rem; font-style: italic; }
+    .reviewer { font-weight: 600; color: var(--forest); font-size: 0.9rem; }
+    .reviewer span { display: block; font-weight: 400; color: var(--stone); font-size: 0.8rem; }
+    .review-cta { text-align: center; margin-top: 2.5rem; }
+
+    /* Visit */
+    .visit-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start; }
+    .contact-card {
+      background: var(--forest); color: var(--cream); padding: 2rem;
+      border-radius: 16px;
+    }
+    .contact-card h3 { color: var(--gold); margin-bottom: 1.25rem; font-size: 1.4rem; }
+    .contact-row { display: flex; gap: 0.75rem; margin-bottom: 1rem; font-size: 0.95rem; }
+    .contact-row strong { display: block; color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .map-frame {
+      width: 100%; height: 420px; border: 0; border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(27,58,43,0.12);
+    }
+    .hours-table { width: 100%; margin-top: 0.5rem; border-collapse: collapse; }
+    .hours-table td { padding: 0.35rem 0; border-bottom: 1px solid rgba(247,245,240,0.1); }
+    .hours-table td:last-child { text-align: right; }
+
+    /* Footer */
+    footer { background: #14291f; color: rgba(247,245,240,0.7); padding: 2.5rem 0; font-size: 0.9rem; }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-links a { margin-left: 1.5rem; color: var(--cream); }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 900px) {
+      .mobile-menu { display: block; }
+      .nav-links {
+        position: absolute; top: 72px; left: 0; right: 0;
+        flex-direction: column; gap: 0; align-items: stretch;
+        background: rgba(27, 58, 43, 0.98); backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(247, 245, 240, 0.1);
+        padding: 0.5rem 0; display: none;
+      }
+      nav.open .nav-links { display: flex; }
+      .nav-links a { padding: 0.85rem 4%; }
+      .about-grid, .visit-grid { grid-template-columns: 1fr; }
+      .services-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .program-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .services-grid, .reviews-grid, .stats-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="#" class="logo">Be™ <span>Brooklyn Equine</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#programs">Programs</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <button class="mobile-menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <div class="badge">
+      <span class="stars">★★★★★</span>
+      <span>4.7 on Google · 26 reviews</span>
+    </div>
+    <h1>Brooklyn's only centrally located stable.</h1>
+    <p>Horse care & riding programs for all ages, from pony rides for toddlers to advanced adult lessons and trail rides through historic Prospect Park.</p>
+    <div class="hero-actions">
+      <a href="mailto:Be@Quadrozzi.com" class="btn btn-primary">Book by Email</a>
+      <a href="tel:7189724588" class="btn btn-outline">Call (718) 972-4588</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container about-grid">
+    <div class="about-text">
+      <h2 class="section-title">A historic stable, a second career for horses.</h2>
+      <p class="section-subtitle">Be™ Brooklyn Equine operates out of Prospect Park Stable — Brooklyn's last active stable in a landmark Olmsted & Vaux park.</p>
+      <p>Established in <strong>1917</strong>, the stable took on new life in 2018 when Be•Brooklyn Equine became its steward. Today it is home to <strong>second-career horses</strong>: animals retrained with focused healthcare, attentive socialization, and work suited to their minds and bodies.</p>
+      <p>Through our <strong>Helping Hoof</strong> initiative, we place horses in healthy, nurturing environments; promote equine-assisted therapy and learning; and advocate for urban infrastructure that keeps horses and humans safe.</p>
+      <p>We also run a waste-management program that donates horse manure to local community gardens — because good stewardship extends beyond the barn.</p>
+      <a href="#visit" class="btn btn-dark" style="margin-top: 1rem;">Plan Your Visit</a>
+    </div>
+    <div class="about-image">
+      <img src="stables.jpg" alt="A child enjoying a pony ride with Brooklyn Equine staff">
+      <div class="caption">Pony rides and family events with Be•Brooklyn Equine · Photo courtesy of Be•Brooklyn Equine</div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div><div class="stat-number">1917</div><div class="stat-label">Stable founded</div></div>
+    <div><div class="stat-number">3.5</div><div class="stat-label">Miles of bridle path</div></div>
+    <div><div class="stat-number">4.7★</div><div class="stat-label">Google rating</div></div>
+    <div><div class="stat-number">All ages</div><div class="stat-label">Riders welcome</div></div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <h2 class="section-title">What we offer</h2>
+    <p class="section-subtitle">Riding, learning, and connecting with horses in the heart of Brooklyn.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🐴</div>
+        <h3>Pony Rides</h3>
+        <p>Introductory rides for toddlers and young children. Pony Rider season runs May–October, Sundays 1–3 PM, rain or shine.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <h3>Riding Lessons</h3>
+        <p>Indoor semi-private lessons for kids and beginner-to-advanced classes for adults, taught by patient, experienced instructors.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌳</div>
+        <h3>Trail Rides</h3>
+        <p>Guided hacks along Prospect Park's 3.5-mile historic bridle path — scenic woodlands, meadows, and ravines on horseback.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏫</div>
+        <h3>After-School & Summer Programs</h3>
+        <p>Multi-session programs where children learn both riding and comprehensive horse care, from grooming to ground work.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>Horse Care Education</h3>
+        <p>Groundwork, grooming, bathing, and stable management. We teach riders to treat horses as partners, not just lesson animals.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎉</div>
+        <h3>Parties & Private Events</h3>
+        <p>Custom pony experiences for birthdays and special occasions. Email Be@Quadrozzi.com for "my pony" packages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programs" class="programs">
+  <div class="container">
+    <h2 class="section-title">Programs at a glance</h2>
+    <p class="section-subtitle">Something for every rider, from first-timers to seasoned equestrians.</p>
+    <div class="program-list">
+      <div class="program-item">
+        <div>
+          <h3>Be • Pony Rider</h3>
+          <p>Sunday tickets for little ones, May–October. A gentle first encounter with horses in a festive, safe setting.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div>
+          <h3>Children's After-School & Summer Programs</h3>
+          <p>Ongoing sessions that combine riding instruction with hands-on horse care and stable chores.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div>
+          <h3>Adult Riding Programs</h3>
+          <p>Beginner through advanced lessons, in partnership with Manhattan Riding Club.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div>
+          <h3>Brooklyn Hack & Trail Rides</h3>
+          <p>Guided rides through Prospect Park for individuals and families wanting a one-of-a-kind urban equestrian experience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="reviews">
+  <div class="container">
+    <h2 class="section-title">What riders say</h2>
+    <p class="section-subtitle">Real reviews from Google Maps riders and families.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Great afterschool/weekend riding program for kids. They learn all about how to care for horses and then get semi-private lessons. The staff are friendly and organized. This place has really enriched my kid's life!"</p>
+        <div class="reviewer">liora schwartz <span>Google review</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Omgoodness this place is a Jewel !! From the ppl to the location. The horses are well taken care of and the kids can enjoy watching the horses get bathed. Rides through Prospect park are offered at an affordable rate."</p>
+        <div class="reviewer">SunKisses <span>Google review</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The staff is well educated and ensures a good experience for all students. You can tell these animals are treated as partners, not just lesson horses."</p>
+        <div class="reviewer">Robert & Fidias Peralta <span>Google reviews</span></div>
+      </div>
+    </div>
+    <div class="review-cta">
+      <a href="https://search.google.com/local/reviews?placeid=ChIJtZSdY9FbwokRdE8DBABfS74" target="_blank" rel="noopener" class="btn btn-dark">Read all Google reviews</a>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <div class="container visit-grid">
+    <div class="contact-card">
+      <h3>Visit the stable</h3>
+      <div class="contact-row">
+        <div>
+          <strong>Address</strong>
+          51-55 Caton Place<br>Brooklyn, NY 11218
+        </div>
+      </div>
+      <div class="contact-row">
+        <div>
+          <strong>Contact</strong>
+          <a href="tel:7189724588" style="color:var(--cream)">(718) 972-4588</a><br>
+          <a href="mailto:Be@Quadrozzi.com" style="color:var(--cream)">Be@Quadrozzi.com</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div>
+          <strong>Hours</strong>
+          <table class="hours-table">
+            <tr><td>Mon–Sat</td><td>By appointment / program</td></tr>
+            <tr><td>Sunday</td><td>1:00 PM – 3:00 PM (Pony Rider)</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div>
+          <strong>Follow</strong>
+          <a href="https://www.instagram.com/be_brooklynequine/" target="_blank" rel="noopener" style="color:var(--gold)">@be_brooklynequine</a> · 
+          <a href="https://www.instagram.com/prospectparkstable/" target="_blank" rel="noopener" style="color:var(--gold)">@prospectparkstable</a>
+        </div>
+      </div>
+      <a href="mailto:Be@Quadrozzi.com" class="btn btn-primary" style="margin-top: 1rem;">Email to book</a>
+    </div>
+    <iframe
+      class="map-frame"
+      src="https://maps.google.com/maps?q=Be%20Brooklyn%20Equine%20Prospect%20Park%20Stable%2C%2051-55%20Caton%20Place%2C%20Brooklyn%2C%20NY%2011218&output=embed"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Be Brooklyn Equine location map">
+    </iframe>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-content">
+    <div>© <span id="year"></span> Be™ Brooklyn Equine at Prospect Park Stable. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://639228.8b.io/" target="_blank" rel="noopener">Original site</a>
+      <a href="https://beponyrider.myshopify.com/" target="_blank" rel="noopener">Pony Rider tickets</a>
+      <a href="https://www.prospectpark.org/visit-the-park/things-to-do/horseback-riding/" target="_blank" rel="noopener">Prospect Park Alliance</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  (function () {
+    var nav = document.querySelector('nav');
+    var btn = document.querySelector('.mobile-menu');
+    var links = document.getElementById('nav-links');
+    function setOpen(open) {
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      btn.textContent = open ? '✕' : '☰';
+    }
+    btn.addEventListener('click', function () {
+      setOpen(!nav.classList.contains('open'));
+    });
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') setOpen(false);
+    });
+  })();
+</script>
+
+</body>
+</html>
