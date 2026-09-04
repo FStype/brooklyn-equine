@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horseback Riding Lessons in Brooklyn | Be™ Brooklyn Equine</title>
+  <meta name="description" content="Horseback riding lessons in Brooklyn for kids and adults — semi-private children's classes and beginner-to-advanced adult instruction at Prospect Park Stable.">
+  <link rel="canonical" href="https://fstype.github.io/brooklyn-equine/riding-lessons.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231b3a2b'/%3E%3Ctext x='50' y='50' font-size='60' text-anchor='middle' dominant-baseline='central'%3E%F0%9F%90%B4%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#1b3a2b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Horseback Riding Lessons in Brooklyn | Be™ Brooklyn Equine">
+  <meta property="og:description" content="Riding lessons for kids and adults at Prospect Park Stable — beginner to advanced.">
+  <meta property="og:image" content="https://fstype.github.io/brooklyn-equine/hero-og.jpg">
+  <meta property="og:url" content="https://fstype.github.io/brooklyn-equine/riding-lessons.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="index.html" class="logo">Be™ <span>Brooklyn Equine</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#visit">Visit</a>
+    </div>
+    <button class="mobile-menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+  </nav>
+</header>
+
+<section class="subhero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Riding Lessons</div>
+    <h1>Horseback riding lessons in Brooklyn</h1>
+    <p>Learn to ride — and to truly care for a horse — with patient instructors at Brooklyn's only centrally located stable.</p>
+  </div>
+</section>
+
+<div class="hoof-trail" aria-hidden="true"></div>
+
+<section>
+  <div class="container prose">
+    <h2>Lessons for children</h2>
+    <p>Kids ride in <strong>semi-private lessons</strong> that pair riding time with real horsemanship. Beyond the saddle, students learn grooming, tacking up, and ground work, so they build confidence around horses, not just on top of them. Our after-school and summer programs extend this into ongoing, multi-session learning.</p>
+
+    <h2>Lessons for adults</h2>
+    <p>Adults are welcome from the very first time in the saddle through advanced work. Classes run in partnership with the <strong>Manhattan Riding Club</strong>, with instruction matched to your level and goals — whether you want a calm weekend hobby or serious skills.</p>
+
+    <h2>How we teach</h2>
+    <ul>
+      <li>Small groups and semi-private formats, so you get real attention.</li>
+      <li>Horses treated as partners — riders learn to read and respect them.</li>
+      <li>A focus on safety, seat, and fundamentals before speed.</li>
+      <li>Helmets required and provided; wear closed-toe shoes with a small heel if you have them.</li>
+    </ul>
+
+    <h2>Getting started</h2>
+    <p>Tell us who's riding, their age, and any past experience, and we'll recommend the right class. Email <a class="inline" href="mailto:Be@Quadrozzi.com">Be@Quadrozzi.com</a> or call <a class="inline" href="tel:7189724588">(718) 972-4588</a> to book your first lesson.</p>
+
+    <p style="margin-top:2rem">
+      <a href="mailto:Be@Quadrozzi.com" class="btn btn-primary">Book a lesson by email</a>
+      <a href="trail-rides.html" class="btn btn-dark" style="margin-left:0.5rem">See trail rides</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-content">
+    <div>© <span id="year"></span> Be™ Brooklyn Equine at Prospect Park Stable. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="pony-rides.html">Pony rides</a>
+      <a href="trail-rides.html">Trail rides</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    var nav = document.querySelector('nav'), btn = document.querySelector('.mobile-menu'), links = document.getElementById('nav-links');
+    function setOpen(o){ nav.classList.toggle('open', o); btn.setAttribute('aria-expanded', String(o)); btn.setAttribute('aria-label', o?'Close menu':'Open menu'); btn.textContent = o?'✕':'☰'; }
+    btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
+    links.addEventListener('click', function(e){ if(e.target.tagName==='A') setOpen(false); });
+  })();
+</script>
+
+</body>
+</html>

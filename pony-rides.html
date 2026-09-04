@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pony Rides in Brooklyn & Prospect Park | Be™ Brooklyn Equine</title>
+  <meta name="description" content="Sunday pony rides for toddlers and young children at Prospect Park Stable, May–October, 1–3 PM. A gentle first horse experience in central Brooklyn.">
+  <link rel="canonical" href="https://fstype.github.io/brooklyn-equine/pony-rides.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231b3a2b'/%3E%3Ctext x='50' y='50' font-size='60' text-anchor='middle' dominant-baseline='central'%3E%F0%9F%90%B4%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#1b3a2b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pony Rides in Brooklyn & Prospect Park | Be™ Brooklyn Equine">
+  <meta property="og:description" content="Sunday pony rides for toddlers and young children at Prospect Park Stable, May–October.">
+  <meta property="og:image" content="https://fstype.github.io/brooklyn-equine/hero-og.jpg">
+  <meta property="og:url" content="https://fstype.github.io/brooklyn-equine/pony-rides.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="index.html" class="logo">Be™ <span>Brooklyn Equine</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#visit">Visit</a>
+    </div>
+    <button class="mobile-menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+  </nav>
+</header>
+
+<section class="subhero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Pony Rides</div>
+    <h1>Pony rides in the heart of Brooklyn</h1>
+    <p>A calm, well-supervised first meeting with horses for toddlers and young children — Sundays at Prospect Park Stable, right in central Brooklyn.</p>
+  </div>
+</section>
+
+<div class="hoof-trail" aria-hidden="true"></div>
+
+<section>
+  <div class="container prose">
+    <h2>When pony rides run</h2>
+    <p>Our <strong>Be • Pony Rider</strong> season runs <strong>May through October</strong>, every <strong>Sunday from 1:00 to 3:00 PM</strong>, rain or shine. No booking marathon required — families come by during the window and take turns.</p>
+
+    <h2>Who it's for</h2>
+    <p>Pony rides suit toddlers and young children who are meeting a horse for the first time. A handler leads the pony the whole way while a parent walks alongside, so even the most cautious first-timer stays comfortable. Helmets are provided and required for every rider.</p>
+
+    <h2>What to expect on the day</h2>
+    <ul>
+      <li>Check in at the stable at 51-55 Caton Place, Brooklyn.</li>
+      <li>Your child is fitted with a helmet and lifted onto a gentle, experienced pony.</li>
+      <li>A staff member leads a slow ride while you walk beside them.</li>
+      <li>Time to meet the horses and, on many days, watch them being groomed and bathed.</li>
+    </ul>
+
+    <h2>Tickets and pricing</h2>
+    <p>Rides are offered at an affordable, family-friendly rate. Grab Sunday tickets through the <a class="inline" href="https://beponyrider.myshopify.com/" target="_blank" rel="noopener">Be • Pony Rider ticket shop</a>, or just email us to plan your visit.</p>
+
+    <h2>Birthday parties &amp; private pony experiences</h2>
+    <p>Want a pony for a birthday or a special occasion? We put together custom "my pony" experiences. Email <a class="inline" href="mailto:Be@Quadrozzi.com">Be@Quadrozzi.com</a> with your date and we'll help you plan it.</p>
+
+    <p style="margin-top:2rem">
+      <a href="https://beponyrider.myshopify.com/" target="_blank" rel="noopener" class="btn btn-primary">Get Pony Rider tickets</a>
+      <a href="index.html#visit" class="btn btn-dark" style="margin-left:0.5rem">Visit info &amp; map</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-content">
+    <div>© <span id="year"></span> Be™ Brooklyn Equine at Prospect Park Stable. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="riding-lessons.html">Riding lessons</a>
+      <a href="trail-rides.html">Trail rides</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    var nav = document.querySelector('nav'), btn = document.querySelector('.mobile-menu'), links = document.getElementById('nav-links');
+    function setOpen(o){ nav.classList.toggle('open', o); btn.setAttribute('aria-expanded', String(o)); btn.setAttribute('aria-label', o?'Close menu':'Open menu'); btn.textContent = o?'✕':'☰'; }
+    btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
+    links.addEventListener('click', function(e){ if(e.target.tagName==='A') setOpen(false); });
+  })();
+</script>
+
+</body>
+</html>
