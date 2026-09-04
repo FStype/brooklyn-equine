@@ -5,7 +5,7 @@ centrally located stable. Horse care and riding programs for all ages — pony r
 trail rides, riding lessons, and after-school/summer programs in and around historic
 Prospect Park.
 
-**Live site:** https://REPLACE_WITH_PAGES_URL/
+**Live site:** https://fstype.github.io/brooklyn-equine/
 
 ## Stack
 Static single-page site — one `index.html` with inline CSS/JS and two photos. No build
